@@ -47,6 +47,7 @@ phases:
     commands:
       - TEST_ARTIFACTS="/tmp/testArtifacts"
       - mkdir -p $TEST_ARTIFACTS/test-reports
+      - codebuild-breakpoint
       - |
         for container in $(docker ps -q); do
             docker cp ${container}:/tmp/logs/ ${container}-logs || true
